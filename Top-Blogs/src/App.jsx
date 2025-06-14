@@ -11,8 +11,8 @@ function App() {
   return (
     <> 
    
-      <Home></Home>
-      <Blogs></Blogs>
+
+      
     
     </>
   )

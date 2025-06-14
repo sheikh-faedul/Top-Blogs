@@ -1,16 +1,23 @@
  
+import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
  
 import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
     return (
-        <div>
-           <div className='h-18 md:h-12'>
+        <div className=''>
+           <div className='  md:h-12'>
              <Navbar></Navbar>
+             
            </div>
-            <Outlet></Outlet>
-        </div>
+       
+             <div className=' min-h-[calc(100vh-116px)]'>
+                <Outlet></Outlet>
+            </div>
+            <Footer></Footer>
+           </div>
+         
     );
 };
 

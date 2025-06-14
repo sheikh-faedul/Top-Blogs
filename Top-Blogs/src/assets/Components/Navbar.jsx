@@ -3,24 +3,25 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
- <div className='fixed w-full'>
-     <div className=' shadow-lg p-2  rounded-xl flex flex-col md:flex-row justify-between'>
-    <div>
+ <div className='fixed w-full z-10'>
+     <div className='shadow-lg p-2  rounded-xl flex flex-col md:flex-row justify-between'>
+    <div className=''>
         <h1 className='text-xl font-semibold' href="">
             Top blogs
         </h1>
     </div>
-    <div >
+    <div className='' >
         <ul className='flex justify-around md:flex gap-6'>
-            <NavLink to ='/' className='text-xl text-blue-500 font-semibold'>
+            <NavLink to ='/' className= {({isActive})=>isActive?'text-xl text-blue-300 font-semibold':'text-xl font-semibold'}>
                  Home
             </NavLink >
-            < NavLink to='/blogs' className='text-xl font-semibold'>
-             Blogs
-            </NavLink>
-            <NavLink to ='/bookmarks' className='text-xl font-semibold'>
-             Bookmarks
-            </NavLink>
+            <NavLink to ='/blogs' className= {({isActive})=>isActive?'text-xl text-blue-300 font-semibold':'text-xl font-semibold'}>
+                 Blogs
+            </NavLink >
+            <NavLink to ='/bookmarks' className= {({isActive})=>isActive?'text-xl text-blue-300 font-semibold':'text-xl font-semibold'}>
+                 Bookmarks
+            </NavLink >
+            
         </ul>
     </div>
    </div>
