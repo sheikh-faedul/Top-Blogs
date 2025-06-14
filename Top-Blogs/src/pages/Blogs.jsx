@@ -1,11 +1,15 @@
-import React from 'react';
-import {  useLoaderData } from 'react-router-dom';
+ 
+import {  useLoaderData, useNavigation } from 'react-router-dom';
 import BlogCard from '../assets/Components/blogCard';
+import Loader from '../assets/Components/loader';
 
 const Blogs = () => {
-
+    
         const blogs= useLoaderData();
-		console.log(blogs)
+		const navigation = useNavigation();
+		
+		if(navigation.state === 'loading')return <Loader></Loader>
+		 
 
     return (
     <section className=" ">
@@ -19,7 +23,7 @@ const Blogs = () => {
 			</div>
 		</a>
 		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-		{blogs.map(blog=>(<BlogCard blog={blog}></BlogCard>))}
+		{blogs.slice(1,19).map(blog=>(<BlogCard blog={blog}></BlogCard>))}
 		</div>
 		 
 	</div>

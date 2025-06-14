@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import {  RouterProvider } from 'react-router-dom'
 import { router } from './routes/routes.jsx'
+import toast, { Toaster } from 'react-hot-toast';
  
 
 
@@ -11,6 +12,6 @@ import { router } from './routes/routes.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
    <RouterProvider router={router}></RouterProvider>
-  
+  <Toaster></Toaster>
   </StrictMode>,
 )

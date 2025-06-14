@@ -1,9 +1,13 @@
-import React from 'react';
+import Markdown from 'react-markdown';
 import { useLoaderData } from 'react-router-dom';
+import rehypeRaw from 'rehype-raw';
+ 
+ 
+
 
 const Contant = () => {
     const blog = useLoaderData()
-      const {cover_image,title,description,published_at,tags}=blog
+      const {cover_image,title,description,published_at,tags,body_html}=blog
     return (
         
           <div
@@ -14,7 +18,12 @@ const Contant = () => {
 			
 		 
 		</div>
-				 
+				<div className="p-6 space-y-2">
+                <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{title}</h3>
+                <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
+              
+					
+				</div>
 			</div>
         
     );
