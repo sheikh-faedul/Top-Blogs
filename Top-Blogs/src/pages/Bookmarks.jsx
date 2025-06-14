@@ -16,7 +16,7 @@ const Bookmarks = () => {
 	}
     if(blogs.length<1)return<EmptyBlogs message={'No Bookmarks Abailable'} address={'/blogs'} label={'GO TO Blogs'}></EmptyBlogs>
     return (
-        	<div className="grid px-4 sm:px-8 lg:px-12 py-6 justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        	<div className="grid px-4 sm:px-8 lg:px-12 py-5 justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 		{blogs.map(blog=>(<BlogCard handelDelete={handelDelete} deletable={true} blog={blog}></BlogCard>))}
 		</div>
     );
