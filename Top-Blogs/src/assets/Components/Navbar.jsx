@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
- <div className='fixed w-full z-10'>
+        // navbar fixed but over scroll contant z-index don't work
+ <div className='fixed w-full z-10'>   
      <div className='shadow-lg p-2  rounded-xl flex flex-col md:flex-row justify-between'>
     <div className=''>
         <h1 className='text-xl font-semibold' href="">
